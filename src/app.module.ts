@@ -1,4 +1,5 @@
 import { Module } from '@nestjs/common';
+import { ConfigModule } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
 
 import { AppController } from './app.controller';
@@ -8,7 +9,7 @@ import { TasksService } from './tasks/tasks.service';
 import { TasksModule } from './tasks/tasks.module';
 
 @Module({
-  imports: [TasksModule, MongooseModule.forRoot(process.env.VUE_APP_TITLE_MONGODB_URI)],
+  imports: [ConfigModule.forRoot(), TasksModule, MongooseModule.forRoot(process.env.MONGODB_URI)],
   controllers: [AppController, TasksController],
   providers: [AppService, TasksService],
 })
