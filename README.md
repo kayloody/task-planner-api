@@ -2,12 +2,22 @@
 
 ## Description
 
-API for [task-planner](https://github.com/kayloody/task-planner). Built with Nest.js and MongoDB.
+API for [task-planner](https://github.com/kayloody/task-planner). Built with Nest.js and MongoDB. Requires a [MongoDB cluster](https://www.mongodb.com/cloud/atlas) to function.
 
 ## Installation
 
 ```bash
 $ npm install
+```
+
+## Environment Variables
+
+```bash
+# API Port Number
+PORT
+
+# MongoDB URI
+MONGODB_URI
 ```
 
 ## Running the app
