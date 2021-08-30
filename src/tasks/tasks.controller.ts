@@ -8,17 +8,17 @@ export class TasksController {
     constructor(private readonly tasksService: TasksService) {}
 
     @Get()
-    fetchAll(): Task[] {
+    fetchAll(): Promise<Task[]> {
         return this.tasksService.fetchAll();
     }
 
     @Post()
-    createOne(@Body() createTaskDto: CreateTaskDto): string {
-        return `Created ${createTaskDto.name}`;
+    createOne(@Body() createTaskDto: CreateTaskDto): Promise<Task> {
+        return this.tasksService.createOne(createTaskDto);
     }
 
     @Put(":id")
-    updateOne(@Body() updateTaskDto: CreateTaskDto, @Param("id") id): string{
-        return `Updated ${id} with ${updateTaskDto.name}`
+    updateOne(@Body() updateTaskDto: CreateTaskDto, @Param("id") id): Promise<Task> {
+        return this.tasksService.updateOne(updateTaskDto, id);
     }
 }
