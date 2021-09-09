@@ -16,6 +16,9 @@ $ npm install
 # API Port Number
 PORT
 
+# Client-side URL
+CLIENT_URL
+
 # MongoDB URI
 MONGODB_URI
 ```
